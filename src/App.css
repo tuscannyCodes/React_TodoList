@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  background-color: coral;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+.appTitle {
+  font-size: 7rem;
+  font-family: "Lobster", cursive;
+}
+.paragraph {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 9vh;
+  font-size: 40px;
+  font-family: "Lobster", cursive;
+}
+input:focus {
+  outline: none !important;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+form button:hover {
+  background: white;
+  color: darkseagreen;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  border: none;
+  padding: 1rem;
+  color: white;
+  background: rgb(134, 133, 133);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: darkseagreen;
+}
+
+.trash-btn {
+  background: firebrick;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+
+.select {
+  margin: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  width: 10rem;
+  cursor: pointer;
+  padding: 1.3rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
   color: white;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.5s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.select:hover:after {
+  background: rgb(78, 78, 78);
 }
