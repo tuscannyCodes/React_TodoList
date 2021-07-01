@@ -17,7 +17,7 @@ setInputText("");
     return (
     
     <form>
-        <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input"></input>
+        <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
         <button onClick={submitTodoHandler} className="todo-button" type="submit">
             <i className="fas fa-plus-square"></i>
         </button>
